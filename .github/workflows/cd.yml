@@ -25,10 +25,14 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22.x
-          cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci || npm install
+        run: |
+          if [ -f package-lock.json ]; then
+            npm ci || npm install
+          else
+            npm install
+          fi
 
       - name: Run Tests
         run: npm test
@@ -45,8 +49,6 @@ jobs:
             server.ts
             package.json
             metadata.json
-            healthcare_dataset.csv
-            Anatomy_Data/
           retention-days: 14
 
       - name: Create Release (Tag Push Only)
