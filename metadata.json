@@ -1,0 +1,6 @@
+{
+  "name": "Medical Recommendation System",
+  "description": "Intelligent anatomical triage and clinical recommendation system with symptom analysis, referred pain detection, and healthcare dataset analytics.",
+  "permissions": [],
+  "capabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
